@@ -115,7 +115,7 @@ class Patcher(object):
 
     # To add py.test support per issue https://github.com/jmcgeheeiv/pyfakefs/issues/43,
     # it appears that adding  'py', 'pytest', '_pytest' to SKIPNAMES will help
-    SKIPNAMES = set(['os', 'glob', 'path', 'shutil', 'tempfile'])
+    SKIPNAMES = set(['os', 'glob', 'path', 'genericpath', 'posixpath', 'shutil', 'tempfile'])
 
     def __init__(self):
         # Attributes set by _findModules()
