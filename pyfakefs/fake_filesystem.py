@@ -288,6 +288,8 @@ class FakeFile(object):
                or if st_size exceeds the available file system space
     """
     # Wrap byte arrays into a safe format
+    if isinstance(contents, Hexlified):
+        contents = contents.recover(True)
     if sys.version_info >= (3, 0) and isinstance(contents, bytes):
       st_size = len(contents)
       contents = Hexlified(contents)
